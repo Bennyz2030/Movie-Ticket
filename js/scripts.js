@@ -23,12 +23,10 @@ Tickets.prototype.priceFinder = function() {
   } else if (time === "evening") {
     this.price += 2;
   }
-  if (movie === 1) {
-    this.price -= 1;
-  } else if (movie >= 2 && movie <= 4) {
+  if (movie >=1 && movie < 5) {
     this.price += 0;
   } else if (movie === 5) {
-    this.price += 10;
+    this.price += 4;
   }  
   return this.price;
 };
@@ -45,8 +43,7 @@ $(document).ready(function() {
     
     let newTicket = new Tickets(ageInput, timeOfDayInput, movieInput);
     
-    newTicket.priceFinder(); //calls the function
-    // console.log(newTicket)
+    newTicket.priceFinder(); 
     $("#output").text(`You're ticket price is $${newTicket.price} . Creep it real!`)
   });
 })
