@@ -8,6 +8,59 @@
   <title>Movie Tickets</title>
 </head>
 <body>
+  <div class="container">
+    <div class="jumbotron-fluid">
+      <h1>Creepshow Movie Theater</h1>
+      <p>Please purchase tickets online in advance. <br><em>Mask Required</em></p>
+    </div>
+
+    <form id="movie-selection">
+      <div class="row">
+        <div class="col=12">
+          <div class="form-group">
+            <label for="movie">Select Movie</label>
+            <select id="movie-choice" class="form-control" required>
+              <option selected disabled value="">Please Select a Movie</option>
+              <option value="1">Night of the Living Dead</option>
+              <option value="2">The Blob</option>
+              <option value="3">Critters</option>
+              <option value="4">The Thing</option>
+              <option value="5">Titanic</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="age">Enter your Age</label>
+            <input type="text" class="form-control" id="age-input" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="time-choice">Time of Day</label>
+            <select id="time-choice" class="form-control" required>
+              <option selected disabled value="">Please Choose One</option>
+              <option value="matinee">Matinee</option>
+              <option value="evening">Evening</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <br><button type="submit" class="btn-success btn-lg">Enter</button>
+
+        
+    </form>
+    <div id="output">
+
+    </div>
+  </div>
   
 </body>
 </html>
