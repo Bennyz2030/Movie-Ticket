@@ -33,19 +33,20 @@ Tickets.prototype.priceFinder = function() {
   return this.price;
 };
 
+
 // UI Logic
 
 $(document).ready(function() {
   $("#movie-selection").submit(function(event) {
-    event.preventDefualt();
-    const movieChoice = parseInt($("select#movie-choice").val());
-    const ageChoice = parseInt($("input#age-input").val());
-    const timeChoice = $("select#time-choice").val();
-
-    let newTicket = new Tickets(movieChoice, ageChoice, timeChoice);
-
-    newTicket.priceFinder();
-    console.log(newTicket);
-    $("#output").text(newTicket)
+    event.preventDefault();
+    const movieInput = parseInt($("select#movie-choice").val());
+    const ageInput = parseInt($("input#age-input").val());
+    const timeOfDayInput = $("select#time-choice").val();
+    
+    let newTicket = new Tickets(ageInput, timeOfDayInput, movieInput);
+    
+    newTicket.priceFinder(); //calls the function
+    // console.log(newTicket)
+    $("#output").text(`You're ticket price is $${newTicket.price} . Creep it real!`)
   });
 })
