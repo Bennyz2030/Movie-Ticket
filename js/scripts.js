@@ -39,9 +39,9 @@ $(document).ready(function() {
     event.preventDefault();
     const movieInput = parseInt($("select#movie-choice").val());
     const ageInput = parseInt($("input#age-input").val());
-    const timeOfDayInput = $("select#time-choice").val();
+    const timeOfDay = $("select#time-choice").val();
     
-    let newTicket = new Tickets(ageInput, timeOfDayInput, movieInput);
+    let newTicket = new Tickets(ageInput, movieInput, timeOfDay);
     
     newTicket.priceFinder(); 
     $("#output").text(`You're ticket price is $${newTicket.price} . Creep it real!`)
